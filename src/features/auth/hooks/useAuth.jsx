@@ -21,7 +21,7 @@ const dispatch = useDispatch()
     try {
         const data =await authApi(credentials)
     console.log(data.accessToken)
-    localStorage.setItem('users', JSON.stringify(data.accessToken))
+    localStorage.setItem('users', data.accessToken)
     dispatch(addUser(data))
     } catch (error) {
         console.log(error)

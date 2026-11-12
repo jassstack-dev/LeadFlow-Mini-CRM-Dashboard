@@ -11,3 +11,25 @@ import { authInstance } from "../../../config/authInstance"
     }
 }
 
+
+ export const AuthMe =async ()=>{
+    try {
+        const token = localStorage.getItem('users')
+
+        if(!token) return null
+
+        const res = await authInstance.get('auth/me', {
+            headers:{
+                 'Authorization': `Bearer ${token}`
+            }
+        })
+        console.log(res.data)
+        return res.data
+    } catch (error) {
+        console.log('error in auth api', error)
+          throw error;
+    }
+}
+
+
+

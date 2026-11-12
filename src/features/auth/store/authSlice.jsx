@@ -22,6 +22,8 @@ const authSlice = createSlice({
             state.isAuthenticated = false
             // state.isloading = true
         }
+
+
     }
     
 })
